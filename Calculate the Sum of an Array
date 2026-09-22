@@ -1,0 +1,23 @@
+Calculate the Sum of an Array
+
+Return the total of all numbers.
+
+Examples:
+
+[1, 2, 3, 4, 5] → 15
+[10, -5, 3] → 8
+[] → 0
+
+
+Solution:
+
+const num = [3, 7, 2, 9, 4];
+let sum = 0;
+
+for (let i = 0; i < num.length; i++) {
+  sum += num[i];
+}
+
+console.log(sum);
+
+
