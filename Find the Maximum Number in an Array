@@ -1,0 +1,30 @@
+Find the Maximum Number in an Array
+
+Write a function that returns the largest number.
+
+Examples:
+
+[3, 7, 2, 9, 4] → 9
+[-5, -2, -10] → -2
+[8] → 8
+
+Constraints:
+
+Don't use Math.max().
+Try to solve it in one loop.
+
+
+
+Solution:
+
+
+const num = [3, 7, 2, 9, 4];
+let max = 0;
+
+for (let i = 0; i < num.length; i++) {
+  if (max < num[i]) {
+    max = num[i];
+  }
+}
+
+console.log(max);
