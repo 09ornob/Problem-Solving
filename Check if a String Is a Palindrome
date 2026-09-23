@@ -1,0 +1,30 @@
+Check if a String Is a Palindrome
+
+Exercise:
+Determine whether a string reads the same forwards and backwards.
+
+Example:
+
+Input:  "racecar"
+Output: true
+Input:  "hello"
+Output: false
+
+
+Solution:
+
+let str = "he";
+let l = 0;
+let r = str.length - 1;
+let isPalindome = true;
+
+while (l < r) {
+  if (str[l] !== str[r]) {
+    isPalindome = false;
+    break;
+  }
+  r--;
+  l++;
+}
+
+console.log(isPalindome);
