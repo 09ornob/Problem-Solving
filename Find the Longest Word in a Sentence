@@ -1,0 +1,26 @@
+Find the Longest Word in a Sentence
+
+Exercise:
+Given a sentence, find the longest word.
+
+Example:
+
+Input: "I love programming"
+
+Output: "programming"
+
+
+Solution:
+
+
+let str = "I love programming";
+let words = str.split(" ");
+let count = 0;
+
+for (let i = 0; i < words.length; i++) {
+  if (words[i].length > count) {
+    count = words[i].length;
+  }
+}
+
+console.log(count);
