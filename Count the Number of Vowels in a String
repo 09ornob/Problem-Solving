@@ -1,0 +1,33 @@
+Count the Number of Vowels in a String
+
+Exercise:
+Count how many vowels appear in a string.
+
+Consider:
+
+a, e, i, o, u
+
+Example:
+
+Input:  "javascript"
+
+Output: 3
+
+
+Solution:
+
+
+let str = "javascript";
+
+str = str.toLowerCase();
+
+const vowels = new Set(["a", "e", "i", "o", "u"]);
+let count = 0;
+
+for (let i = 0; i < str.length; i++) {
+  if (vowels.has(str[i])) {
+    count += 1;
+  }
+}
+
+console.log(count);
