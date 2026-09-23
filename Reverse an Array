@@ -32,3 +32,5 @@ const newArr = [...num].reverse();
 
 console.log(newArr);
 console.log(num);
+
+
