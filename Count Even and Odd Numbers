@@ -1,0 +1,28 @@
+Count Even and Odd Numbers
+
+Exercise:
+Given an array of integers, count how many numbers are even and how many are odd.
+
+Example:
+
+Input:  [2, 7, 4, 9, 10, 13]
+
+Output:
+Even: 3
+Odd: 3
+
+
+Solution:
+
+
+const num = [3, 7, 2, 9, 4];
+let even = 0;
+let odd = 0;
+
+for (let i = 0; i < num.length; i++) {
+  if (num[i] % 2 === 1) {
+    odd += 1;
+  } else {
+    even += 1;
+  }
+}
