@@ -1,0 +1,34 @@
+Reverse an Array
+
+Exercise:
+Reverse an array without using .reverse().
+
+Example:
+
+Input:  [1, 2, 3, 4, 5]
+
+Output: [5, 4, 3, 2, 1]
+
+
+Solution:
+
+1. With new Array
+
+const num = [3, 7, 2, 9, 4];
+const newArr = [];
+
+for (let i = num.length - 1; i >= 0; i--) {
+  newArr.push(num[i]);
+}
+
+console.log(newArr);
+
+
+2. Inplace without modifying the original Array
+
+
+const num = [3, 7, 2, 9, 4];
+const newArr = [...num].reverse();
+
+console.log(newArr);
+console.log(num);
