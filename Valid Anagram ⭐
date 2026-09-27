@@ -1,0 +1,58 @@
+Valid Anagram ⭐
+Exercise
+
+Given two strings s and t, determine whether t is an anagram of s.
+
+An anagram uses exactly the same characters with the same frequencies, but potentially in a different order.
+
+Examples:
+
+s = "listen"
+t = "silent"
+
+Output: true
+s = "hello"
+t = "world"
+
+Output: false
+s = "aacc"
+t = "ccac"
+
+Output: false
+Constraints
+1 <= s.length, t.length <= 100,000
+Characters are lowercase English letters.
+
+
+Solution:
+
+
+str = "aab";
+str2 = "abb";
+const map = new Map();
+let isValid = true;
+
+for (let i = 0; i < str.length; i++) {
+  if (map.has(str[i])) {
+    map.set(str[i], map.get(str[i]) + 1);
+  } else {
+    map.set(str[i], 1);
+  }
+}
+
+for (let i = 0; i < str2.length; i++) {
+  if (map.has(str2[i])) {
+    map.set(str2[i], map.get(str2[i]) - 1);
+  } else {
+    map.set(str2[i], -1);
+  }
+}
+
+for (let [key, value] of map) {
+  if (value !== 0) {
+    isValid = false;
+    break;
+  }
+}
+
+console.log(isValid);
