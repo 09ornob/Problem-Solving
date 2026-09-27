@@ -1,0 +1,57 @@
+Find the Difference Between Two Arrays
+Exercise
+
+Given two integer arrays nums1 and nums2, return two arrays:
+
+Numbers that appear in nums1 but not in nums2
+Numbers that appear in nums2 but not in nums1
+
+Each number should appear only once in the result.
+
+Example:
+
+nums1 = [1, 2, 3]
+nums2 = [2, 4, 6]
+
+Output:
+[
+  [1, 3],
+  [4, 6]
+]
+
+Another:
+
+nums1 = [1, 2, 3, 3]
+nums2 = [1, 1, 2, 2]
+
+Output:
+[
+  [3],
+  []
+]
+
+
+Solution:
+
+
+const nums1 = [1, 2, 3];
+const nums2 = [2, 4, 6];
+let set = new Set(nums1);
+let set2 = new Set(nums2);
+
+const newArr1 = [];
+const newArr2 = [];
+
+for (let num of set) {
+  if (!set2.has(num)) {
+    newArr1.push(num);
+  }
+}
+
+for (let num of set2) {
+  if (!set.has(num)) {
+    newArr2.push(num);
+  }
+}
+
+console.log(newArr1, newArr2);
