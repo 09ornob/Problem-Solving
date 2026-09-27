@@ -1,0 +1,38 @@
+First Unique Character in a String
+Exercise
+
+Given a string s, find the index of the first character that appears exactly once.
+
+If no such character exists, return -1.
+
+Examples:
+
+s = "leetcode"
+
+Output: 0
+s = "loveleetcode"
+
+Output: 2
+s = "aabb"
+
+Output: -1
+
+
+Solution:
+
+let s = "leetcode";
+let map = new Map();
+let char = "";
+
+for (let i = 0; i < s.length; i++) {
+  map.set(s[i], (map.get(s[i]) || 0) + 1);
+}
+
+for (let [key, value] of map) {
+  if (value === 1) {
+    char = key;
+    break;
+  }
+}
+
+console.log(s.indexOf(char));
