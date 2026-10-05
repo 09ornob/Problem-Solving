@@ -1,0 +1,35 @@
+Given:
+
+nums = [3, 2, 2, 3]
+val = 3
+
+Remove every occurrence of val in-place.
+
+Expected valid result:
+
+[2, 2, _, _]
+
+Return:
+
+2
+
+
+SOLUTION:
+
+const nums = [3, 2, 2, 3];
+let val = 3;
+let pos = 0;
+
+for (let i = 0; i < nums.length; i++) {
+  if (nums[i] !== val) {
+    nums[pos] = nums[i];
+    pos++;
+  }
+}
+
+while (pos < nums.length) {
+  nums[pos] = "_";
+  pos++;
+}
+
+console.log(nums);
