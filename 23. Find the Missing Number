@@ -1,0 +1,20 @@
+An array contains distinct numbers from 0 through n, with exactly one number missing. Find the missing number.
+Example: nums = [3, 0, 1]
+Output: 2
+Explanation: The complete sequence is 0, 1, 2, 3.
+
+
+Solution:
+
+const nums = [3, 0, 1];
+const set = new Set(nums);
+lenth = nums.length + 1;
+let missingNumber = 0;
+
+for (let i = 0; i < lenth; i++) {
+  if (!set.has(i)) {
+    missingNumber = i;
+  }
+}
+
+console.log(missingNumber);
