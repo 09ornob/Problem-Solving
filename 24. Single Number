@@ -1,0 +1,31 @@
+24. Single Number
+Easy
+Pattern: Arrays · Bit manipulation · XOR
+Every element in an array appears exactly twice except for one element, which appears once. Find that element.
+Example: nums = [4, 1, 2, 1, 2]
+Output: 4
+Explanation: 1 and 2 each appear twice; 4 appears only once.
+
+
+Solution:
+
+const nums = [4, 1, 2, 1, 2];
+const map = new Map();
+let single;
+
+for (let i = 0; i < nums.length; i++) {
+  if (!map.has(nums[i])) {
+    map.set(nums[i], 1);
+  } else {
+    map.set(nums[i], map.get(nums[i]) + 1);
+  }
+}
+
+for (let [key, value] of map) {
+  if (value === 1) {
+    single = key;
+    break;
+  }
+}
+
+console.log(single);
