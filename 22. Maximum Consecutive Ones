@@ -1,0 +1,29 @@
+22. Maximum Consecutive Ones
+Easy
+Pattern: Arrays · Counting · Tracking a streak
+Given a binary array containing only 0 and 1, find the maximum number of consecutive 1s.
+Example: nums = [1, 1, 0, 1, 1, 1]
+Output: 3
+
+
+Solution:
+
+const nums = [1, 1, 0, 1, 1, 1];
+let maxCount = 0;
+let count = 0;
+
+for (let i = 0; i < nums.length; i++) {
+  if (nums[i] === 1) {
+    count = count + 1;
+  }
+
+  if (count > maxCount) {
+    maxCount = count;
+  }
+
+  if (nums[i] != 1) {
+    count = 0;
+  }
+}
+
+console.log(maxCount);
