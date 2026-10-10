@@ -1,0 +1,29 @@
+21. Best Time to Buy and Sell Stock ⭐
+Easy–Medium
+Pattern: Greedy · One-pass array traversal
+Given an array of stock prices, find the maximum profit you can make by buying once and selling later.
+Example: prices = [7, 1, 5, 3, 6, 4]
+Output: 5
+Explanation: Buy at 1, sell at 6. Profit = 6 - 1 = 5.
+
+
+Solution:
+
+const nums = [7, 1, 5, 3, 6, 4];
+let min = nums[0];
+let maxProfit = 0;
+
+for (let i = 0; i < nums.length; i++) {
+  let currentPrice = nums[i];
+  let profit = currentPrice - min;
+
+  if (currentPrice < min) {
+    min = currentPrice;
+  }
+
+  if (profit > maxProfit) {
+    maxProfit = profit;
+  }
+}
+
+console.log(maxProfit);
